@@ -5,7 +5,11 @@
   "license": "GPL-3.0-or-later",
   "scripts": {
     "build": "cross-env ts-node ./script/build",
-    "lint": "eslint . --ext .ts --fix"
+    "lint": "eslint . --ext .ts --fix",
+    "build:graph:v3": "graph build v3-subgraph.yaml",
+    "build:graph:v3-tokens": "graph build v3-tokens-subgraph.yaml",
+    "deploy:v3:taiko-hoodi-testnet:goldsky": "goldsky subgraph deploy uniswap-v3-taiko-hoodi-testnet/$(git rev-parse --short HEAD) --path .",
+    "deploy:v3-tokens:taiko-hoodi-testnet:goldsky": "goldsky subgraph deploy v3-tokens-taiko-hoodi-testnet/$(git rev-parse --short HEAD) --path ."
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.64.1",
