@@ -19,6 +19,7 @@ export enum NETWORK {
   ZKSYNC_ERA = 'zksync-era',
   ZORA = 'zora-mainnet',
   TAIKO_HOODI_TESTNET = 'taiko-hoodi-testnet',
+  TAIKO = 'taiko',
 }
 
 export enum SUBGRAPH_TYPE {
