@@ -2,8 +2,9 @@ import { Address, BigDecimal, BigInt } from '@graphprotocol/graph-ts'
 
 export const FACTORY_ADDRESS = '0x87C772301B2054D47e2b12c4C3C402481158B7f2'
 
-export const REFERENCE_TOKEN = '0x3B39685B5495359c892DDD1057B5712F49976835' // WETH
-export const STABLE_TOKEN_POOL = '0x95e34b9A99C1b64F2E913B37e01608326B245B66' // USDC/WETH 0.01%
+// token and pool addresses are case sensitive, use lowercase
+export const REFERENCE_TOKEN = '0x3b39685b5495359c892ddd1057b5712f49976835' // WETH
+export const STABLE_TOKEN_POOL = '0x95e34b9a99c1b64f2e913b37e01608326b245b66' // USDC/WETH 0.01%
 
 export const TVL_MULTIPLIER_THRESHOLD = '2'
 export const MATURE_MARKET = '1000000'
@@ -19,13 +20,13 @@ export const ROLL_DELETE_MINUTE_LIMITER = BigInt.fromI32(1000)
 // usually tokens that many tokens are paired with s
 export const WHITELIST_TOKENS: string[] = [
   REFERENCE_TOKEN, // WETH
-  '0x18d5bB147f3D05D5f6c5E60Caf1daeeDBF5155B6', // USDC
-  '0xeb4e8Eb83d6FFBa2ce0d8F62ACe60648d1ECE116', // USDT
+  '0x18d5bb147f3d05d5f6c5e60caf1daeedbf5155b6', // USDC
+  '0xeb4e8eb83d6ffba2ce0d8f62ace60648d1ece116', // USDT
 ]
 
 export const STABLE_COINS: string[] = [
-  '0x18d5bB147f3D05D5f6c5E60Caf1daeeDBF5155B6', // USDC
-  '0xeb4e8Eb83d6FFBa2ce0d8F62ACe60648d1ECE116', // USDT
+  '0x18d5bb147f3d05d5f6c5e60caf1daeedbf5155b6', // USDC
+  '0xeb4e8eb83d6ffba2ce0d8f62ace60648d1ece116', // USDT
 ]
 
 export const SKIP_POOLS: string[] = []

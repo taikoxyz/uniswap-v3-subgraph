@@ -2,6 +2,7 @@ import { Address, BigDecimal, BigInt } from '@graphprotocol/graph-ts'
 
 export const FACTORY_ADDRESS = '0x826D713e30f0bF09Dd3219494A508E6B30327d4f'
 
+// token and pool addresses are case sensitive, use lowercase
 export const REFERENCE_TOKEN = '0xa51894664a773981c6c112c43ce576f315d5b1b6' // WETH
 export const STABLE_TOKEN_POOL = '0x77852ca7a18a67efc8c1b22da4ea13159fbbb5dc' // USDC/WETH 0.3%
 
