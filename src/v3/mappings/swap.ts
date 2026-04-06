@@ -51,9 +51,17 @@ export function handleSwap(event: SwapEvent): void {
     const amount1USD = amount1ETH.times(bundle.ethPriceUSD)
 
     // get amount that should be tracked only - div 2 because cant count both input and output as volume
-    const amountTotalUSDTracked = getTrackedAmountUSD(amount0Abs, token0 as Token, amount1Abs, token1 as Token).div(
+    let amountTotalUSDTracked = getTrackedAmountUSD(amount0Abs, token0 as Token, amount1Abs, token1 as Token).div(
       BigDecimal.fromString('2')
     )
+
+    // Sanity check: cap volume at 5x pool TVL to prevent corrupted price data
+    // from permanently inflating cumulative volume/fee accumulators
+    const maxReasonableVolume = pool.totalValueLockedUSD.times(BigDecimal.fromString('5'))
+    if (maxReasonableVolume.gt(ZERO_BD) && amountTotalUSDTracked.gt(maxReasonableVolume)) {
+      amountTotalUSDTracked = ZERO_BD
+    }
+
     const amountTotalETHTracked = safeDiv(amountTotalUSDTracked, bundle.ethPriceUSD)
     const amountTotalUSDUntracked = amount0USD.plus(amount1USD).div(BigDecimal.fromString('2'))
 
